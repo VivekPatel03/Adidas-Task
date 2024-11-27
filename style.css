@@ -4,8 +4,37 @@
   box-sizing: border-box;
 }
 
+.slider {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  list-style: none;
+  text-align: center;
+  padding: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 130px;
+  background-color: #ffffff;
+  z-index: 11111;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transform: translateX(-132%);
+  transition: all 0.2s ease-in-out;
+}
+
+#bar {
+  font-size: 20px;
+  display: none;
+}
+
 body {
   overflow-x: hidden;
+}
+
+nav #logo {
+  height: 35px;
 }
 
 nav ul {
@@ -15,8 +44,13 @@ nav ul {
   align-items: center;
   height: 70px;
 }
-nav ul #logo {
-  height: 35px;
+nav ul .list {
+  display: flex;
+  gap: 1rem;
+}
+nav ul .ICON {
+  display: flex;
+  gap: 1rem;
 }
 nav ul li {
   list-style: none;
@@ -127,7 +161,8 @@ nav ul #red {
 }
 
 .shoes {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   margin: 50px;
 }
@@ -326,4 +361,49 @@ nav ul #red {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 11px;
   padding-top: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  #bar {
+    display: block;
+  }
+  nav ul .list {
+    display: none;
+  }
+  #bar {
+    font-size: 25px;
+  }
+  nav ul .ICON {
+    display: flex;
+    gap: 1rem;
+  }
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 426px) {
+  .sec1 .title {
+    padding-left: 0px;
+    padding-top: 10px;
+  }
+  .sec1 .title .button {
+    display: flex;
+    flex-direction: column;
+  }
+  .mini .btn {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .shoes {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .footer {
+    flex-wrap: wrap;
+  }
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }/*# sourceMappingURL=style.css.map */
